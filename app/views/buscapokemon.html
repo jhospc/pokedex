@@ -1,0 +1,62 @@
+<h1>Encuentra tu pokemon</h1>
+
+<!--
+<div>Buscar</div>
+ <select class="form-control"
+           ng-model="buscar.pokemon.url"
+			ng-options="item.url as item.name for item in pokemons"
+           required>
+           	<option value="">Seleccione</option>
+</select>
+-->
+<img ng-src="{{ pokemondata.sprites.front_default }}" alt="" >
+<li>Nombre Pokemon: {{ pokemondata.name }}</li>
+<li>Altura: {{ pokemondata.height }}</li>
+<li>Peso: {{ pokemondata.weight }}</li>
+<li>ExperienciaBase: {{ pokemondata.base_experience }}</li>
+<li>Especie: {{ pokemonesp.evolution_chain.url }}</li>
+<!--
+<li>Evolucion: {{ pokemonevo.chain.evolves_to }}</li>
+-->
+<table>
+  <tbody>
+    <tr>
+      <td>
+ <ul ng-repeat="pokemontipo in pokemondata.types">
+<li> Tipo: {{ pokemontipo.type.name }}</li></ul>
+    </td>
+  </tr>
+</tbody>
+<table>
+  
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+ <ul ng-repeat="pokeevo in pokemonevo.chain.evolves_to">
+<li> Evolucion: {{ pokeevo.species.name }}</li>
+<li> URL: {{ pokeevo.species.url }}</li>
+</ul>
+
+    </td>
+  </tr>
+</tbody>
+<table>
+
+
+
+
+
+
+
+<!--
+{{ pokemondata.types }}
+-->
+<!--
+<div ng-repeat="pokemon in pokemondata">
+<li>Nombre Pokemon: {{ pokemon.name }}</li>
+<li>Peso: {{ pokemon.weight }}</li>
+<li>Ubicacion: {{ pokemon.url }}</li>
+</div>
+-->

@@ -1,0 +1,39 @@
+<h1>Salgan pokemons</h1>
+
+<!--
+<div>Buscar</div>
+ <select class="form-control"
+           ng-model="buscar.empresa._id"
+			ng-options="item._id as item.razsoc for item in empresas"
+           required>
+           	<option value="">Seleccione</option>
+           </select>
+-->
+<label>Busca tu Pokemon:
+	<input ng-model="searchText.name">
+</label>
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>/</td>
+			<td>Pokemon Nombre de Pila</td>
+			<td>Donde lo Encuentro</td>
+
+		</tr>
+	</thead>
+	<tbody>
+		<!--<tr ng-repeat="pokemon in pokemons | filter:buscar"> -->
+		<tr ng-repeat="pokemon in pokemons | filter:searchText">
+			<td>{{$index + 1}}</td>
+			<td><a href="http://localhost:9000/#!/buscapokemon/{{ pokemon.url.split('/')[6] }}">{{pokemon.name}}</a></td>
+			<!--<td>{{pokemon.url}}</td>-->
+			<td><a href="{{pokemon.url}}">{{ pokemon.url.split('/')[6] }}</a></td>
+
+		</tr>
+	</tbody>
+</table>
+
+<!--
+{{pokemons}}
+-->
